@@ -1,0 +1,5 @@
+jdk:
+  - openjdk21
+
+# JitPack otherwise may default to an older JDK (e.g. 8),
+# which can't compile Quarkus 3 / Jakarta EE 10+ dependencies.
