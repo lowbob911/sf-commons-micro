@@ -137,8 +137,7 @@ public class TokenManager {
 
         Object rolesObj = claims.get("roles");
         Collection<String> roles = null;
-        if (rolesObj instanceof Collection) {
-            Collection<?> collection = (Collection<?>) rolesObj;
+        if (rolesObj instanceof Collection<?> collection) {
             roles = new ArrayList<>();
             for (Object role : collection) {
                 if (role != null) {
