@@ -118,7 +118,8 @@ public class RequestUtils {
 
         if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
             Object property = requestContext.getProperty("io.vertx.core.http.HttpServerRequest");
-            if (property instanceof HttpServerRequest request) {
+            if (property instanceof HttpServerRequest) {
+                HttpServerRequest request = (HttpServerRequest) property;
                 ipAddress = request.remoteAddress() != null ? request.remoteAddress().host() : null;
             }
         }
